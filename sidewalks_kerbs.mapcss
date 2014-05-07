@@ -39,3 +39,28 @@ node[barrier=kerb][kerb=lowered]
     icon-image: "https://github.com/species/josm-preset-wheelchair/raw/master/kerb_lowered.png";
     icon-width: 16;
 }
+
+way[footway=crossing]
+{
+  width: 8;
+  color: black;
+  dashes: 4,4;
+  dashes-background-color: white;
+}
+
+way[segregated=no]
+{
+  repeat-image: foot_and_cycleway_combined_rotated.png;
+  repeat-image-spacing: 30;
+  repeat-image-width: 24;
+}
+way[segregated=yes]
+{
+  repeat-image: foot_and_cycleway_segregated_rotated.png;
+  repeat-image-spacing: 30;
+  repeat-image-width: 24;
+}
+
+way[highway=footway]
+{
+}
