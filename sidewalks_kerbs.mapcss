@@ -16,21 +16,26 @@ node[barrier=kerb]
 node[barrier=kerb][kerb!~/raised|flush|lowered|rolled/]
 {
     icon-image: "https://github.com/species/josm-preset-wheelchair/raw/master/kerb_unknown.png";
+    icon-width: 16;
 }
 
 node[barrier=kerb][kerb=raised]
 {
     icon-image: "https://github.com/species/josm-preset-wheelchair/raw/master/kerb_raised.png";
+    icon-width: 16;
 }
 node[barrier=kerb][kerb=rolled]
 {
     icon-image: "https://github.com/species/josm-preset-wheelchair/raw/master/kerb_rolled.png";
+    icon-width: 16;
 }
 node[barrier=kerb][kerb=flush]
 {
     icon-image: "https://github.com/species/josm-preset-wheelchair/raw/master/kerb_flush.png";
+    icon-width: 16;
 }
 node[barrier=kerb][kerb=lowered]
 {
     icon-image: "https://github.com/species/josm-preset-wheelchair/raw/master/kerb_lowered.png";
+    icon-width: 16;
 }
