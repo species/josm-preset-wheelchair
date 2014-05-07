@@ -1,0 +1,36 @@
+meta {
+    title: "Sidewalks&Kerbs";   /* title shown in the menu */
+    /* icon: "images/logo.png";  small icon shown in the menu next to the title */
+    version: "0.1";           
+    description: "A Style for highlighting wheelchair-relevant Tags";      
+    author: "Michael Maier (species@osm)";
+    /* link: "http://...";       URL to the web page of the style */
+    min-josm-version: 6789;   /* the minimum JOSM version where this style works */
+}
+
+node[barrier=kerb]
+{
+    text: "kerb:height";
+}
+
+node[barrier=kerb][kerb!~/raised|flush|lowered|rolled/]
+{
+    icon-image: "https://github.com/species/josm-preset-wheelchair/raw/master/kerb_unknown.png";
+}
+
+node[barrier=kerb][kerb=raised]
+{
+    icon-image: "https://github.com/species/josm-preset-wheelchair/raw/master/kerb_raised.png";
+}
+node[barrier=kerb][kerb=rolled]
+{
+    icon-image: "https://github.com/species/josm-preset-wheelchair/raw/master/kerb_rolled.png";
+}
+node[barrier=kerb][kerb=flush]
+{
+    icon-image: "https://github.com/species/josm-preset-wheelchair/raw/master/kerb_flush.png";
+}
+node[barrier=kerb][kerb=lowered]
+{
+    icon-image: "https://github.com/species/josm-preset-wheelchair/raw/master/kerb_lowered.png";
+}
