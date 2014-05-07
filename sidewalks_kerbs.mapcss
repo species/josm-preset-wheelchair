@@ -50,15 +50,59 @@ way[footway=crossing]
 
 way[segregated=no]
 {
-  repeat-image: foot_and_cycleway_combined_rotated.png;
+  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/foot_and_cycleway_combined_rotated.png";
   repeat-image-spacing: 30;
   repeat-image-width: 24;
+  z-index:1;
 }
 way[segregated=yes]
 {
-  repeat-image: foot_and_cycleway_segregated_rotated.png;
+  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/foot_and_cycleway_segregated_rotated.png";
   repeat-image-spacing: 30;
   repeat-image-width: 24;
+  z-index:1;
+}
+
+way[highway=footway][width],
+way[highway=cycleway][width]
+{
+  width:12;
+  opacity:0.5;
+}
+way[highway=footway][width <= 0.8],
+way[highway=cycleway][foot=~/designated|yes/][width <= 0.8]
+{
+  color:red;
+}
+way[highway=footway][width > 0.8][width <= 0.9],
+way[highway=cycleway][foot=~/designated|yes/][width > 0.8][width <= 0.9]
+{
+  color:orange;
+}
+way[highway=footway][width > 0.9][width <= 1.3],
+way[highway=cycleway][foot=~/designated|yes/][width > 0.9][width <= 1.3]
+{
+  color:yellow;
+}
+way[highway=footway][width > 1.3],
+way[highway=cycleway][foot=~/designated|yes/][width > 1.3]
+{
+  color:green;
+}
+
+/* green: surf:all paved, smoothn:exc-intermediate → rolli */
+/* yellow: surf:cobblestone(ohne), grass_paver smoothn: bad; gravel,ground,sand mit smoothn:exc-intermediate → kiwa,mob'e*/
+/* red: smoothn:very_bad+/all others; surf:gravel,ground,sand with undefined, */
+way[highway=footway][surface=~/paved|asphalt|concrete/][footway!=crossing],
+way[highway=cycleway][foot=~/designated|yes/]
+{
+  casing-width:3;
+  casing-color:green;
+}
+
+way[highway=footway],
+way[highway=cycleway][foot=~/designated|yes/]
+{
 }
 
 way[highway=footway]
