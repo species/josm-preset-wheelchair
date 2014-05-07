@@ -35,11 +35,11 @@
   <combo key="bicycle" text="bicycles allowed?" de.text="Radweg?" values="no,designated" de.display_values="Fahrräder nicht erlaubt,Ausgeschilderter Radweg" delete_if_empty="true" />
   <combo key="segregated" text="cycleway" de.text="gemeinsame Nutzung, oder Radweg durch Linie getrennt?" values="yes,no" de.display_values="gemeinsame Nutzung,getrennt" delete_if_empty="true" />
 </item>
-<item name="Kerb details" de.name="Randstein-Attribute" icon="https://github.com/species/josm-preset-wheelchair/raw/master/kerb_rolled.png">
+<item name="Kerb details" de.name="Randstein-Attribute" icon="https://github.com/species/josm-preset-wheelchair/raw/master/kerb_rolled.png" type="node">
   <label text="kerbs" de.text="Randstein-Attribute" />
   <space />
   <key key="barrier" value="kerb" />
-  <combo key="kerb" text="type of kerb" de.text="Typ des Randsteins" values="flush,lowered,rolled,raised" de.display_values="ganz eben (0cm),abgesenkt (1-3cm) ,abgeschrägt (30-45°, Höhe >3cm),hoch (3-10cm)" />
+  <combo key="kerb" text="type of kerb" de.text="Typ des Randsteins" values="flush,lowered,rolled,raised" de.display_values="ganz eben (0cm),abgesenkt (1-3cm),abgeschrägt (30-45° Höhe >3cm),hoch (3-10cm)" />
   <space />
   <label text="kerb heights (use “N &lt;space&gt; cm”)" de.text="Höhe bitte als „XX &lt;Leerzeichen&gt; cm“ angeben" />
   <text key="kerb:height" text="kerb:height" de.text="Randsteinhöhe" delete_if_empty="true" />
