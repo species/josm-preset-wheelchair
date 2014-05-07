@@ -6,45 +6,43 @@
 		 de.shortdescription="Gehwege &amp; Randsteine" 
 		 description="Add information about pavements and kerbs" 
      de.description="Informationen über Gehwege und Randsteine">
-<group name="Pavements &amp; Kerbs" de.name="Gehwege und Randsteine">
+<group name="Pavements &amp; Kerbs" de.name="Gehwege &amp; Randsteine">
   <item name="Pavement Details" de.name="Gehsteig-Attribute" type="way" icon="https://github.com/species/josm-preset-wheelchair/raw/master/footway-wheelchair.png">
-  <label text="All data in orientation of the vector!" de.text="Alle Angaben in Richtung des Vektors!" /> 
+  <label text="*All data in orientation of the vector!*" de.text="Alle Angaben in Richtung des Vektors!" /> 
   <space />
   <key key="highway" value="footway" /> 
   <combo key="footway" text="type of footway" de.text="Spezifizierung des Gehwegs" values="sidewalk,crossing" de.display_values="Gehsteig,Kreuzungsquerung" delete_if_empty="true" /> 
   <space />
-  <label text="attributes" de.text="Gehwegattribute" />
-  <space />
-  <label text="width" de.text="Breite des Gehwegs" />
+  <label text="width" de.text="|   Breite" />
   <space />
   <text key="width" text="width" de.text="Schmalste Breite des Gehwegs (in Meter)" delete_if_empty="true" />
   <space />
-  <label text="surface" de.text="Oberfläche" />
+  <label text="surface" de.text="|   Oberfläche" />
   <space />
   <combo key="surface" text="Surface" de.text="Art der Oberfläche" values="asphalt,paving_stones,cobblestone,concrete,grass_paver,gravel,ground,sand," de.display_values="Asphalt,Steinplatten,Kopfsteinpflaster,Beton,Rasengittersteine,Kies/Schotter,Erdboden,Sand" delete_if_empty="true" /> 
-  <combo key="smoothness" text="smoothness" de.text="Zustand der Oberfläche" values="excellent,good,intermediate,bad,very_bad,horrible,very_horrible,impassable" de.display_values="exzellent,gut,mittel,schlecht (kein rolli),sehr schlecht (max. Gelände-Buggy),horrible (Allrad notwendig),very_horrible (Max. MTB), unpassierbar für Radfahrzeuge" />
+  <combo key="smoothness" text="smoothness" de.text="Zustand der Oberfläche" values="excellent,good,intermediate,bad,very_bad,horrible,very_horrible,impassable" de.display_values="exzellent,gut,mittel,schlecht (kein Rolli),sehr schlecht (max. Gelände-Buggy),horrible (Allrad notwendig),very_horrible (Max. MTB),unpassierbar f. Radf." />
   <space />
-  <label text="incline" de.text="Neigung bzw. Gefälle (mit '%' ohne Leerzeichen)" />
+  <label text="incline" de.text="|   Neigung bzw. Gefälle (mit '%' ohne Leerzeichen)" />
   <space />
   <text key="incline" text="incline (%)" de.text="Maximale Neigung (in %) bzw. Gefälle (in -%)" delete_if_empty="true" /> 
   <text key="incline:across" text="across incline (%)" de.text="Quer-Neigung (in %)" delete_if_empty="true" /> 
   <space />
-  <label text="lit" de.text="Gehwegbeleuchtung" />
+  <label text="lit" de.text="|   Beleuchtung" />
   <space />
-  <combo key="lit" text="is the way lit" de.text="Wird der Gehweg beleuchtet?" values="yes,no,opposite" de.display_values="ja,nein,durch die gegenüberliegenden Laternen" delete_if_empty="true" />
+  <combo key="lit" text="is the way lit" de.text="Ist der Gehweg beleuchtet?" values="yes,no,opposite" de.display_values="ja,nein,durch Laternen gegenüber" delete_if_empty="true" />
   <space />
-  <label text="Cycleway" de.text="Fahrradweg auf dem Gehweg" />
+  <label text="Cycleway" de.text="|   Fahrräder" />
   <combo key="bicycle" text="bicycles allowed?" de.text="Radweg?" values="no,designated" de.display_values="Fahrräder nicht erlaubt,Ausgeschilderter Radweg" delete_if_empty="true" />
-  <space />
-  <combo key="segregated" text="cycleway" de.text="Findet eine gemeinsame Nutzung statt oder ist der Radweg durch eine Linie getrennt?" values="yes,no" de.display_values="gemeinsame Nutzung,getrennt" delete_if_empty="true" />
-  <space />
+  <combo key="segregated" text="cycleway" de.text="gemeinsame Nutzung, oder Radweg durch Linie getrennt?" values="yes,no" de.display_values="gemeinsame Nutzung,getrennt" delete_if_empty="true" />
 </item>
 <item name="Kerb details" de.name="Randstein-Attribute" icon="https://github.com/species/josm-preset-wheelchair/raw/master/kerb_rolled.png">
   <label text="kerbs" de.text="Randstein-Attribute" />
+  <space />
   <key key="barrier" value="kerb" />
-  <combo key="kerb" text="type of kerb" de.text="Typ des Randsteins" values="flush,lowered,rolled,raised" de.display_values="ganz eben (0cm) ,abgesenkt (1-3cm) ,abgeschrägt (30-45°, Höhe >3cm),hoch (3-10cm)" />
+  <combo key="kerb" text="type of kerb" de.text="Typ des Randsteins" values="flush,lowered,rolled,raised" de.display_values="ganz eben (0cm),abgesenkt (1-3cm) ,abgeschrägt (30-45°, Höhe >3cm),hoch (3-10cm)" />
+  <space />
   <label text="kerb heights (use “N &lt;space&gt; cm”)" de.text="Höhe bitte als „XX &lt;Leerzeichen&gt; cm“ angeben" />
-  <text key="kerb:height" text="kerb:height" de.text="Höhe des Randsteins" delete_if_empty="true" />
+  <text key="kerb:height" text="kerb:height" de.text="Randsteinhöhe" delete_if_empty="true" />
 
 </item>
 </group>
