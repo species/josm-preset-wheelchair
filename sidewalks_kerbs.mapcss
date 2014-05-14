@@ -63,6 +63,28 @@ way[segregated=yes]
   z-index:1;
 }
 
+/* inclines: 
+  0-2: green
+  3-6%: yellow
+  7-10%   orange
+  > 10 red
+*/
+way[incline]
+{
+  repeat-image-spacing: 30;
+  repeat-image-width: 24;
+  z-index:0;
+}
+way[incline=~/^[12]%$/]                               {  repeat-image: "incline_up_green.png";}
+way[incline=~/^[3-6]%$/]                              {  repeat-image: "incline_up_yellow.png";}
+way[incline=~/^[7-9]{1}%$|^10%$/]                     {  repeat-image: "incline_up_orange.png";}
+way[incline=~/^1[1-9]%$|^[2-9][0-9]%$|^1[0-9]{2}%$/]  {  repeat-image: "incline_up_red.png";}
+
+way[incline=~/^-[12]%$/]                                {  repeat-image: "incline_down_green.png";}
+way[incline=~/^-[3-6]%$/]                               {  repeat-image: "incline_down_yellow.png";} 
+way[incline=~/^-[7-9]{1}%$|^-10%$/]                     {  repeat-image: "incline_down_orange.png";}
+way[incline=~/^-1[1-9]%$|^-[2-9][0-9]%$|^-1[0-9]{2}%$/] {  repeat-image: "incline_down_red.png";}
+
 way[highway=footway][width],
 way[highway=cycleway][width]
 {
