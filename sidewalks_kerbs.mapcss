@@ -14,7 +14,7 @@ node[barrier=kerb]
 }
 node[barrier=kerb][!kerb:height]
 {
-  text: eval("Randsteinhöhe?");
+  text: eval("Kerb height?");
   text-halo-color: white;
   text-halo-radius: 2;
   text-color: red;
