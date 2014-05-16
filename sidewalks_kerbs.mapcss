@@ -11,6 +11,12 @@ meta {
 node[barrier=kerb]
 {
     text: "kerb:height";
+    text-halo-color: black;
+    text-halo-radius: 2;
+    font-size: 12;
+    text-anchor-vertical:top;
+    text-anchor-horizontal:center;
+    text-offset-y:14;
 }
 node[barrier=kerb][!kerb:height]
 {
@@ -99,15 +105,15 @@ way[incline]::incline
   repeat-image-width: 24;
   major-z-index:3.1;
 }
-way[incline=~/^[12]%$/]::incline                               {  repeat-image: "incline_up_green.png";}
-way[incline=~/^[3-6]%$/]::incline                              {  repeat-image: "incline_up_yellow.png";}
-way[incline=~/^[7-9]{1}%$|^10%$/]::incline                     {  repeat-image: "incline_up_orange.png";}
-way[incline=~/^1[1-9]%$|^[2-9][0-9]%$|^1[0-9]{2}%$/]::incline  {  repeat-image: "incline_up_red.png";}
+way[incline=~/^[12]%$/]::incline                               {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_up_green.png";}
+way[incline=~/^[3-6]%$/]::incline                              {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_up_yellow.png";}
+way[incline=~/^[7-9]{1}%$|^10%$/]::incline                     {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_up_orange.png";}
+way[incline=~/^1[1-9]%$|^[2-9][0-9]%$|^1[0-9]{2}%$/]::incline  {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_up_red.png";}
 
-way[incline=~/^-[12]%$/]::incline                                {  repeat-image: "incline_down_green.png";}
-way[incline=~/^-[3-6]%$/]::incline                               {  repeat-image: "incline_down_yellow.png";} 
-way[incline=~/^-[7-9]{1}%$|^-10%$/]::incline                     {  repeat-image: "incline_down_orange.png";}
-way[incline=~/^-1[1-9]%$|^-[2-9][0-9]%$|^-1[0-9]{2}%$/]::incline {  repeat-image: "incline_down_red.png";}
+way[incline=~/^-[12]%$/]::incline                                {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_down_green.png";}
+way[incline=~/^-[3-6]%$/]::incline                               {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_down_yellow.png";} 
+way[incline=~/^-[7-9]{1}%$|^-10%$/]::incline                     {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_down_orange.png";}
+way[incline=~/^-1[1-9]%$|^-[2-9][0-9]%$|^-1[0-9]{2}%$/]::incline {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_down_red.png";}
 
 way[incline:across]::across_incline
 { 
@@ -116,16 +122,16 @@ way[incline:across]::across_incline
   repeat-image-width: 24;
   major-z-index:3.1;
 }
-way[incline:across="0%"]::across_incline                                     {  repeat-image: "incline_across-even.png";}
-way[incline:across=~/^[12]%$/]::across_incline                               {  repeat-image: "incline_across-right_green.png";}
-way[incline:across=~/^[3-6]%$/]::across_incline                              {  repeat-image: "incline_across-right_yellow.png";}
-way[incline:across=~/^[7-9]{1}%$|^10%$/]::across_incline                     {  repeat-image: "incline_across-right_orange.png";}
-way[incline:across=~/^1[1-9]%$|^[2-9][0-9]%$|^1[0-9]{2}%$/]::across_incline  {  repeat-image: "incline_across-right_red.png";}
+way[incline:across="0%"]::across_incline                                     {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_across-even.png";}
+way[incline:across=~/^[12]%$/]::across_incline                               {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_across-right_green.png";}
+way[incline:across=~/^[3-6]%$/]::across_incline                              {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_across-right_yellow.png";}
+way[incline:across=~/^[7-9]{1}%$|^10%$/]::across_incline                     {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_across-right_orange.png";}
+way[incline:across=~/^1[1-9]%$|^[2-9][0-9]%$|^1[0-9]{2}%$/]::across_incline  {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_across-right_red.png";}
 
-way[incline:across=~/^-[12]%$/]::across_incline                               {  repeat-image: "incline_across-left_green.png";}
-way[incline:across=~/^-[3-6]%$/]::across_incline                              {  repeat-image: "incline_across-left_yellow.png";}
-way[incline:across=~/^-[7-9]{1}%$|^-10%$/]::across_incline                     {  repeat-image: "incline_across-left_orange.png";}
-way[incline:across=~/^-1[1-9]%$|^[2-9][0-9]%$|^-1[0-9]{2}%$/]::across_incline  {  repeat-image: "incline_across-left_red.png";}
+way[incline:across=~/^-[12]%$/]::across_incline                               {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_across-left_green.png";}
+way[incline:across=~/^-[3-6]%$/]::across_incline                              {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_across-left_yellow.png";}
+way[incline:across=~/^-[7-9]{1}%$|^-10%$/]::across_incline                     {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_across-left_orange.png";}
+way[incline:across=~/^-1[1-9]%$|^[2-9][0-9]%$|^-1[0-9]{2}%$/]::across_incline  {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_across-left_red.png";}
 
 
 /* widths */
