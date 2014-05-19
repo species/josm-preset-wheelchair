@@ -76,6 +76,32 @@ way[footway=crossing]
   dashes-background-color: white;
   z-index:-1;
 }
+way[highway=steps]
+{
+  color:red;
+  width:24;
+  repeat-image-width: 24;
+  dashes:1,4;
+}
+way[highway=steps][handrail:center=yes]::center
+{
+  color:red;
+  width:2;
+}
+way[highway=steps][handrail:right=yes]::right { 
+  color:red;
+  width:2;
+  offset:11; 
+}
+way[highway=steps][handrail:left=yes]::left {
+  color:red;
+  width:2;
+  offset:-11; 
+}
+
+way[highway=steps][incline=up] { repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_up_steps.png"; }
+way[highway=steps][incline=down] { repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_down_steps.png"; }
+
 
 way[segregated]::segregated
 {
