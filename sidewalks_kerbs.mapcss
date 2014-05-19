@@ -76,6 +76,8 @@ way[footway=crossing]
   dashes-background-color: white;
   z-index:-1;
 }
+
+/* step properties */
 way[highway=steps]
 {
   color:red;
@@ -103,6 +105,7 @@ way[highway=steps][incline=up] { repeat-image: "https://github.com/species/josm-
 way[highway=steps][incline=down] { repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_down_steps.png"; }
 
 
+/* cycle way signs */
 way[segregated]::segregated
 {
   repeat-image-spacing: 90;
@@ -169,19 +172,15 @@ way[highway=cycleway][!width][footway!=crossing]
   text-offset:0;
   text-color: red;
   font-size: 14;
-  color:white;
-  width:24;
-  dashes:none;
-
 }
-way[highway=footway][width],
+/*way[highway=footway][width],
 way[highway=cycleway][width]
 {
   width:20;
   dashes:none;
   casing-width:2;
   casing-color:white;
-}
+}*/
 way[highway=footway][width < 0.8],
 way[highway=cycleway][foot=~/designated|yes/][width <= 0.8]
 {
@@ -210,23 +209,73 @@ way[highway=cycleway][foot=~/designated|yes/][width > 1.3]
 }
 
 /* surface status */
-/* green: surf:all paved, smoothn:exc-intermediate → rolli */
-/* yellow: surf:cobblestone(ohne), grass_paver smoothn: bad; gravel,ground,sand mit smoothn:exc-intermediate → kiwa,mob'e*/
-/* red: smoothn:very_bad+/all others; surf:gravel,ground,sand with undefined, */
-way[highway=footway][surface=~/paved|asphalt|concrete/][footway!=crossing]::surface,
-way[highway=cycleway][foot=~/designated|yes/]::surface
-{
-  width:30;
-  dashes:6,2;
-  color:green;
+/* green: all paved */
+/* orange: cobblestone */
+/* blue: wood */
+/* pink: gravel,ground,sand  */
+/* green with grey crosses: grass_paver */
+
+/* ways for which surface should be rendered */
+way[highway=steps],
+way[highway=footway][footway!=crossing],
+way[highway=cycleway][foot=~/designated|yes/]
+{  surf: yes;
+  set surf;}
+
+
+
+way[!surface].surf::surface {
+  color:white;
+  width:24;
   major-z-index:1.5;
 }
 
-way[highway=footway],
-way[highway=cycleway][foot=~/designated|yes/]
+way[surface=~/paved|asphalt|concrete/].surf::surface
 {
+  color:green;
+  width:24;
+  major-z-index:1.5;
+}
+way[surface=cobblestone].surf::surface
+{
+  color:orange;
+  width:24;
+  major-z-index:1.5;
+}
+way[surface=~/unpaved|gravel|sand/].surf::surface
+{
+  color:#ff00ff;
+  width:24;
+  major-z-index:1.5;
+}
+way[surface=wood].surf::surface
+{
+  color:blue;
+  width:24;
+  major-z-index:1.5;
 }
 
-way[highway=footway]
+
+/* smoothness: casing */
+/* */
+way[smoothness=~/excellent|good|intermediate/]::smoothness
 {
+  width: 32;
+  color:green;
+  dashes:4,4;
+  major-z-index:0.4;
+}
+way[smoothness=~/bad/]::smoothness
+{
+  width: 32;
+  color:yellow;
+  dashes:4,4;
+  major-z-index:0.4;
+}
+way[smoothness][smoothness!~/excellent|good|intermediate|bad/]::smoothness
+{
+  width: 32;
+  color:red;
+  dashes:4,4;
+  major-z-index:0.4;
 }
