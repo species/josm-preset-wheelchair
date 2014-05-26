@@ -39,7 +39,7 @@
   <label text="kerbs" de.text="Randstein-Attribute" />
   <space />
   <key key="barrier" value="kerb" />
-  <combo key="kerb" text="type of kerb" de.text="Typ des Randsteins" values="flush,lowered,rolled,raised" de.display_values="ganz eben (0cm),abgesenkt (1-3cm),abgeschrägt (30-45° Höhe >3cm),hoch (3-10cm)" />
+  <combo key="kerb" text="type of kerb" de.text="Typ des Randsteins" values="flush,lowered,rolled,raised" de.display_values="ganz eben (0cm),abgesenkt (1-3cm),abgeschrägt (45°- &gt;3cm),hoch (&gt;3cm)" />
   <space />
   <label text="kerb heights (use “N &lt;space&gt; cm”)" de.text="Höhe bitte als „XX &lt;Leerzeichen&gt; cm“ angeben" />
   <text key="kerb:height" text="kerb:height" de.text="Randsteinhöhe" delete_if_empty="true" />
