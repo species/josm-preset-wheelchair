@@ -288,3 +288,114 @@ way[smoothness][smoothness!~/excellent|good|intermediate|bad/]::smoothness
   dashes:4,4;
   major-z-index:0.4;
 }
+
+/* entrances 
+  * ramp + incline
+  * width
+  * door type (swinging/sliding/revolving)
+  * Automatic Yes/No
+  * step_count
+  * Handrail 
+  * exit yes/no
+  * wheelchair yes/no
+
+*/
+
+node[entrance][!width]::width {
+  text: eval("width?");
+  text-halo-color: white;
+  text-halo-radius: 2;
+  text-color: blue;
+  font-size: 14;
+  text-anchor-vertical:top;
+  text-anchor-horizontal:center;
+  text-offset-y:24;
+}
+
+node[entrance][width]::width {
+  text: "width";
+  text-halo-color: white;
+  text-halo-radius: 2;
+  text-color: blue;
+  font-size: 14;
+  text-anchor-vertical:top;
+  text-anchor-horizontal:center;
+  text-offset-y:28;
+  text-offset-x:-26;
+}
+
+node[entrance][automatic_door=yes]::A {
+  text: eval("A");
+  text-halo-color: white;
+  text-halo-radius: 2;
+  text-color: blue;
+  font-size: 14;
+  text-anchor-vertical:top;
+  text-anchor-horizontal:center;
+  text-offset-y:28;
+  text-offset-x:20;
+}
+
+node[entrance][door=revolving]::door {
+  icon-image: "https://github.com/species/josm-preset-wheelchair/raw/master/door_revolving.png";
+  icon-width: 24;
+}
+
+node[entrance][door=sliding]::door {
+  icon-image: "https://github.com/species/josm-preset-wheelchair/raw/master/door_sliding.png";
+  icon-width: 24;
+}
+
+node[entrance][door=swinging]::door {
+  icon-image: "https://github.com/species/josm-preset-wheelchair/raw/master/door_swinging.png";
+  icon-width: 24;
+}
+
+node[entrance][step_count]::step_count {
+  text: "step_count";
+  text-halo-color: white;
+  text-halo-radius: 2;
+  text-color: red;
+  font-size: 14;
+  text-anchor-vertical:top;
+  text-anchor-horizontal:center;
+  text-offset-y:5;
+  text-offset-x:20;
+}
+
+node[entrance][ramp:stroller=yes]::stroller {
+  icon-image: "https://github.com/species/josm-preset-wheelchair/raw/master/stroller.png";
+  icon-width: 64;
+}
+
+node[entrance][wheelchair=yes]::wheelchair {
+  icon-image: "https://github.com/species/josm-preset-wheelchair/raw/master/wheelchair-corner.png";
+  icon-width: 64;
+}
+node[entrance][wheelchair=no]::wheelchair {
+  icon-image: "https://github.com/species/josm-preset-wheelchair/raw/master/wheelchair-no-corner.png";
+  icon-width: 64;
+}
+
+node[entrance][ramp=yes]::ramp {
+  icon-image: "https://github.com/species/josm-preset-wheelchair/raw/master/ramp_red.png";
+  icon-width: 24;
+}
+
+node[entrance][incline]::incline {
+  text: "incline";
+  text-halo-color: white;
+  text-halo-radius: 2;
+  text-color: red;
+  font-size: 14;
+  text-anchor-vertical:top;
+  text-anchor-horizontal:center;
+  text-offset-y:-14;
+  text-offset-x:32;
+}
+
+node[entrance] {
+}
+
+node[entrance] {
+}
