@@ -43,7 +43,21 @@
   <space />
   <label text="kerb heights (use “N &lt;space&gt; cm”)" de.text="Höhe bitte als „XX &lt;Leerzeichen&gt; cm“ angeben" />
   <text key="kerb:height" text="kerb:height" de.text="Randsteinhöhe" delete_if_empty="true" />
-
+</item>
+<item name="Entrance Details" de.name="Tür-Attribute" icon="styles/standard/misc/entrance-main.png" type="node">
+  <label text="entrances" de.text="Tür-Attribute" />
+  <space />
+  <combo key="entrance" text="type of entrance" de.text="Typ des Eingangs" values="main,service,emergency,exit,yes" de.display_values="Haupteingang,Service-Eingang,Notausgang,Nur Ausgang,Unbestimmt" />
+  <space />
+  <check key="automatic_door" text="Automatic Door" de.text="Tür Automatisch?" />
+  <combo key="door" text="door type" de.text="Bauart der Tür" values="swinging,sliding,revolving" de.display_values="Normale Schwingtür,Schiebetür,Drehtür" />
+  <text key="incline" text="incline (%)" de.text="Neigung der Rampe (in %)" delete_if_empty="true" />
+  <check key="ramp" text="is there a ramp?" de.text="Rampe vorhanden?" />
+  <check key="ramp:stroller" text="stroller-ramp?" de.text="Kinderwagen-Rampe?" />
+  <text key="step_count" text="step count" de.text="Anzahl Stufen" delete_if_empty="true" />
+  <check key="wheelchair"  text="wheelchair?" de.text="Rollstuhlgeeignet?" />
+  <label text="incline" de.text="|   Neigung bzw. Gefälle (mit '%' ohne Leerzeichen)" />
+  <text key="width" text="width" de.text="Türbreite (in Meter)" delete_if_empty="true" />
 </item>
 </group>
 </presets> 
