@@ -53,10 +53,9 @@
   <combo key="door" text="door type" de.text="Bauart der Tür" values="swinging,sliding,revolving" de.display_values="Normale Schwingtür,Schiebetür,Drehtür" />
   <text key="incline" text="incline (%)" de.text="Neigung der Rampe (in %)" delete_if_empty="true" />
   <check key="ramp" text="is there a ramp?" de.text="Rampe vorhanden?" />
-  <check key="ramp:stroller" text="stroller-ramp?" de.text="Kinderwagen-Rampe?" />
   <text key="step_count" text="step count" de.text="Anzahl Stufen" delete_if_empty="true" />
   <check key="wheelchair"  text="wheelchair?" de.text="Rollstuhlgeeignet?" />
-  <label text="incline" de.text="|   Neigung bzw. Gefälle (mit '%' ohne Leerzeichen)" />
+  <check key="stroller"  text="stroller?" de.text="für Kinderwagen geeignet?" />
   <text key="width" text="width" de.text="Türbreite (in Meter)" delete_if_empty="true" />
 </item>
 </group>
