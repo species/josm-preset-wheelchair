@@ -192,7 +192,7 @@ way[width < 0.8].display_width::width
 }
 
 
-way[width >= 0.8][width <= 0.9].display_width::width
+way[width >= 0.8][width < 0.9].display_width::width
 {
   repeat-image-spacing: 90;
   repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/width-orange.png";
@@ -200,7 +200,7 @@ way[width >= 0.8][width <= 0.9].display_width::width
   repeat-image-width: 24;
   major-z-index: 3.2;
 }
-way[width > 0.9][width <= 1.3].display_width::width
+way[width >= 0.9][width < 1.3].display_width::width
 {
   repeat-image-spacing: 90;
   repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/width-yellow.png";
@@ -208,7 +208,7 @@ way[width > 0.9][width <= 1.3].display_width::width
   repeat-image-width: 24;
   major-z-index: 3.2;
 }
-way[width > 1.3].display_width::width
+way[width >= 1.3].display_width::width
 {
   repeat-image-spacing: 90;
   repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/width-good.png";
@@ -226,9 +226,9 @@ way[width > 1.3].display_width::width
 /* green with grey crosses: grass_paver */
 
 /* ways for which surface should be rendered */
-way[highway=steps],
-way[highway=footway][footway!=crossing],
-way[highway=cycleway][foot=~/designated|yes/]
+way[highway=steps]::surface,
+way[highway=footway][footway!=crossing]::surface,
+way[highway=cycleway][foot=~/designated|yes/]::surface
 { set surf;}
 
 
@@ -309,7 +309,8 @@ node[entrance][!width]::width {
   font-size: 14;
   text-anchor-vertical:top;
   text-anchor-horizontal:center;
-  text-offset-y:24;
+  text-offset-y:28;
+  text-offset-x:-38;
 }
 
 node[entrance][width]::width {
@@ -352,7 +353,7 @@ node[entrance][door=swinging]::door {
 }
 
 node[entrance][step_count]::step_count {
-  text: "step_count";
+  text: eval(tag("step.height") ? concat(tag("step_count"),", ",tag("step.height")) : tag("step_count"));
   text-halo-color: white;
   text-halo-radius: 2;
   text-color: red;
