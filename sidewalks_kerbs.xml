@@ -28,12 +28,13 @@
   <text key="incline:across" text="across incline (%)" de.text="Quer-Neigung (in %)" delete_if_empty="true" /> 
   <space />
   <label text="lit" de.text="|   Beleuchtung" />
-  <space />
   <combo key="lit" text="is the way lit" de.text="Ist der Gehweg beleuchtet?" values="yes,no,opposite" de.display_values="ja,nein,durch Laternen gegenüber" delete_if_empty="true" />
   <space />
   <label text="Cycleway" de.text="|   Fahrräder" />
   <combo key="bicycle" text="bicycles allowed?" de.text="Radweg?" values="no,designated" de.display_values="Fahrräder nicht erlaubt,Ausgeschilderter Radweg" delete_if_empty="true" />
   <combo key="segregated" text="cycleway" de.text="gemeinsame Nutzung, oder Radweg durch Linie getrennt?" values="yes,no" de.display_values="gemeinsame Nutzung,getrennt" delete_if_empty="true" />
+  <space />
+  <combo key="tunnel" text="tunnel" de.text="Ist dieser Abschnitt ein Tunnel?" values="building_passage,yes" de.display_values="Gebäude-Durchgang,Tunnel" delete_if_empty="true" />
 </item>
 <item name="Kerb details" de.name="Randstein-Attribute" icon="https://github.com/species/josm-preset-wheelchair/raw/master/kerb_rolled.png" type="node">
   <label text="kerbs" de.text="Randstein-Attribute" />
@@ -51,11 +52,13 @@
   <space />
   <check key="automatic_door" text="Automatic Door" de.text="Tür Automatisch?" />
   <combo key="door" text="door type" de.text="Bauart der Tür" values="swinging,sliding,revolving" de.display_values="Normale Schwingtür,Schiebetür,Drehtür" />
-  <text key="incline" text="incline (%)" de.text="Neigung der Rampe (in %)" delete_if_empty="true" />
+  <space />
   <check key="ramp" text="is there a ramp?" de.text="Rampe vorhanden?" />
+  <text key="incline" text="incline (%)" de.text="Neigung der Rampe (in %)" delete_if_empty="true" />
   <text key="step_count" text="step count" de.text="Anzahl Stufen" delete_if_empty="true" />
   <check key="wheelchair"  text="wheelchair?" de.text="Rollstuhlgeeignet?" />
   <check key="stroller"  text="stroller?" de.text="für Kinderwagen geeignet?" />
+  <space />
   <text key="width" text="width" de.text="Türbreite (in Meter)" delete_if_empty="true" />
 </item>
 </group>
