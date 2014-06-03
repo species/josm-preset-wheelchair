@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0" 
 		 author="species@osm" 
-		 version="0.1" 
-		 shortdescription="sidewalks &amp; kerbs" 
-		 de.shortdescription="Gehwege &amp; Randsteine" 
-		 description="Add information about pavements and kerbs" 
-     de.description="Informationen über Gehwege und Randsteine">
-<group name="Pavements &amp; Kerbs" de.name="Gehwege &amp; Randsteine">
+		 version="0.2" 
+		 shortdescription="sidewalks, kerbs &amp; entrances 4 wheelchair-users" 
+		 de.shortdescription="Gehwege, Randsteine &amp; Eingänge für Rollis" 
+		 description="Add information about pavements, kerbs and entrances for wheelchair users" 
+     de.description="Informationen über Gehwege, Randsteine und Eingänge für Mobilitätsbeeinträchtigte">
+<group name="Pavements, Kerbs &amp; Entrances" de.name="Gehwege, Randsteine &amp; Eingänge" icon="https://github.com/species/josm-preset-wheelchair/raw/master/footway-wheelchair.png">
   <item name="Pavement Details" de.name="Gehsteig-Attribute" type="way" icon="https://github.com/species/josm-preset-wheelchair/raw/master/footway-wheelchair.png">
   <label text="*All data in orientation of the vector!*" de.text="Alle Angaben in Richtung des Vektors!" /> 
   <space />
