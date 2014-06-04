@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0" 
-		 author="species@osm" 
-		 version="0.2" 
+		 author="Michael Maier (species@osm)" 
+		 version="0.3" 
 		 shortdescription="sidewalks, kerbs &amp; entrances 4 wheelchair-users" 
 		 de.shortdescription="Gehwege, Randsteine &amp; Eingänge für Rollis" 
 		 description="Add information about pavements, kerbs and entrances for wheelchair users" 
@@ -19,7 +19,7 @@
   <space />
   <label text="surface" de.text="|   Oberfläche" />
   <space />
-  <combo key="surface" text="Surface" de.text="Art der Oberfläche" values="asphalt,paving_stones,cobblestone,concrete,grass_paver,gravel,ground,sand," de.display_values="Asphalt,Steinplatten,Kopfsteinpflaster,Beton,Rasengittersteine,Kies/Schotter,Erdboden,Sand" delete_if_empty="true" /> 
+  <combo key="surface" text="Surface" de.text="Art der Oberfläche" values="asphalt,paving_stones,cobblestone,concrete,grass_paver,gravel,ground,sand,wood" de.display_values="Asphalt,Steinplatten,Kopfsteinpflaster,Beton,Rasengittersteine,Kies/Schotter,Erdboden,Sand,Holz" delete_if_empty="true" /> 
   <combo key="smoothness" text="smoothness" de.text="Zustand der Oberfläche" values="excellent,good,intermediate,bad,very_bad,horrible,very_horrible,impassable" de.display_values="exzellent,gut,mittel,schlecht (kein Rolli),sehr schlecht (max. Gelände-Buggy),horrible (Allrad notwendig),very_horrible (Max. MTB),unpassierbar f. Radf." />
   <space />
   <label text="incline" de.text="|   Neigung bzw. Gefälle (mit '%' ohne Leerzeichen)" />
