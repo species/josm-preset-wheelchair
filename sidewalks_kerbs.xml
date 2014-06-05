@@ -52,14 +52,17 @@
   <space />
   <check key="automatic_door" text="Automatic Door" de.text="Tür Automatisch?" />
   <combo key="door" text="door type" de.text="Bauart der Tür" values="swinging,sliding,revolving" de.display_values="Normale Schwingtür,Schiebetür,Drehtür" />
+  <text key="width" text="width" de.text="Türbreite (in Meter)" delete_if_empty="true" />
   <space />
   <check key="ramp" text="is there a ramp?" de.text="Rampe vorhanden?" />
   <text key="incline" text="incline (%)" de.text="Neigung der Rampe (in %)" delete_if_empty="true" />
+  <check key="handrail:right"  text="handrail:right?" de.text="Geländer rechts?" />
+  <check key="handrail:center"  text="handrail:center?" de.text="Geländer mittig?" />
+  <check key="handrail:left"  text="handrail:left?" de.text="Geländer links?" />
+  <space />
   <text key="step_count" text="step count" de.text="Anzahl Stufen" delete_if_empty="true" />
   <check key="wheelchair"  text="wheelchair?" de.text="Rollstuhlgeeignet?" />
   <check key="stroller"  text="stroller?" de.text="für Kinderwagen geeignet?" />
-  <space />
-  <text key="width" text="width" de.text="Türbreite (in Meter)" delete_if_empty="true" />
 </item>
 </group>
 </presets> 
