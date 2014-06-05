@@ -1,7 +1,7 @@
 meta {
     title: "Wheelchair Routing Attributes";   /* title shown in the menu */
     /* icon: "images/logo.png";  small icon shown in the menu next to the title */
-    version: "0.3";           
+    version: "0.4";           
     description: "A Style for highlighting wheelchair-relevant Tags";      
     author: "Michael Maier (species@osm)";
     /* link: "http://...";       URL to the web page of the style */
@@ -64,7 +64,7 @@ way[footway=crossing] > node[highway!=crossing][!kerb] {
 way[footway=crossing] > node[highway!=crossing][!kerb]::rand {
   symbol-shape: square; 
   symbol-fill-color:red; 
-  symbol-size:30;
+  symbol-size:28;
   z-index:-1;
 }
 
@@ -371,7 +371,7 @@ node[entrance][step_count]::step_count {
   text-offset-x:20;
 }
 
-node[entrance][ramp:stroller=yes]::stroller {
+node[entrance][ramp:stroller=yes]::stroller, node[entrance][stroller=yes]::stroller {
   icon-image: "https://github.com/species/josm-preset-wheelchair/raw/master/stroller.png";
   icon-width: 64;
 }
@@ -402,7 +402,8 @@ node[entrance][incline]::incline {
   text-offset-x:32;
 }
 
-node[entrance] {
+node[highway=crossing] {
+icon-width: 20;
 }
 
 node[entrance] {
