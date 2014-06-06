@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0" 
 		 author="Michael Maier (species@osm)" 
-		 version="0.5" 
+		 version="0.6" 
 		 shortdescription="sidewalks, kerbs &amp; entrances 4 wheelchair-users" 
 		 de.shortdescription="Gehwege, Randsteine &amp; Eingänge für Rollis" 
 		 description="Add information about pavements, kerbs and entrances for wheelchair users" 
@@ -11,7 +11,7 @@
   <label text="*All data in orientation of the vector!*" de.text="Alle Angaben in Richtung des Vektors!" /> 
   <space />
   <key key="highway" value="footway" /> 
-  <combo key="footway" text="type of footway" de.text="Spezifizierung des Gehwegs" values="sidewalk,crossing" de.display_values="Gehsteig,Kreuzungsquerung" delete_if_empty="true" /> 
+  <combo key="footway" text="type of footway" de.text="Spezifizierung des Gehwegs" values="sidewalk,crossing,island" de.display_values="Gehsteig,Kreuzungsquerung,Verkehrsinsel" delete_if_empty="true" /> 
   <space />
   <label text="width" de.text="|   Breite" />
   <space />
@@ -54,15 +54,16 @@
   <combo key="door" text="door type" de.text="Bauart der Tür" values="swinging,sliding,revolving" de.display_values="Normale Schwingtür,Schiebetür,Drehtür" />
   <text key="width" text="width" de.text="Türbreite (in Meter)" delete_if_empty="true" />
   <space />
+  <text key="step_count" text="step count" de.text="Anzahl Stufen" delete_if_empty="true" />
+  <space />
   <check key="ramp" text="is there a ramp?" de.text="Rampe vorhanden?" />
+  <check key="ramp:stroller"  text="ramp:stroller?" de.text="Kinderwagen-Rampe vorhanden (Geteilt mit Stufen in der Mitte)?" />
   <text key="ramp:incline" text="incline (%)" de.text="Neigung der Rampe (in %)" delete_if_empty="true" />
   <check key="handrail:right"  text="handrail:right?" de.text="Geländer rechts?" />
   <check key="handrail:center"  text="handrail:center?" de.text="Geländer mittig?" />
   <check key="handrail:left"  text="handrail:left?" de.text="Geländer links?" />
   <space />
-  <text key="step_count" text="step count" de.text="Anzahl Stufen" delete_if_empty="true" />
   <check key="wheelchair"  text="wheelchair?" de.text="Rollstuhlgeeignet?" />
-  <check key="stroller"  text="stroller?" de.text="für Kinderwagen geeignet?" />
 </item>
 </group>
 </presets> 

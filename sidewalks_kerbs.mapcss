@@ -1,7 +1,7 @@
 meta {
     title: "Wheelchair Routing Attributes";   /* title shown in the menu */
     /* icon: "images/logo.png";  small icon shown in the menu next to the title */
-    version: "0.5";           
+    version: "0.6";           
     description: "A Style for highlighting wheelchair-relevant Tags";      
     author: "Michael Maier (species@osm)";
     /* link: "http://...";       URL to the web page of the style */
@@ -18,7 +18,7 @@ node[barrier=kerb]
     text-anchor-horizontal:center;
     text-offset-y:14;
 }
-node[barrier=kerb][!kerb:height][kerb!=lowered]
+node[barrier=kerb][!kerb:height][kerb!=flush]::error
 {
   text: eval("Kerb height?");
   text-halo-color: white;
@@ -26,6 +26,14 @@ node[barrier=kerb][!kerb:height][kerb!=lowered]
   text-color: red;
   font-size: 14;
 }
+node[barrier=kerb][kerb:height!~/\.|cm|^0$/][kerb:height]::error {
+  text: eval("unusual Kerb height?");
+  text-halo-color: white;
+  text-halo-radius: 2;
+  text-color: red;
+  font-size: 14;
+}
+
 
 node[kerb] { icon-width: 24; }
 node[kerb]::rand
@@ -190,6 +198,9 @@ way[!width].display_width::width
   text-halo-color: white;
   text-halo-radius: 2;
 }
+area[!width].display_width::width {
+  text: eval("");
+}
 
 way[width < 0.8].display_width::width
 {
@@ -238,40 +249,31 @@ way[width >= 1.3].display_width::width
 way[highway=steps]::surface,
 way[highway=footway][footway!=crossing]::surface,
 way[highway=cycleway][foot=~/designated|yes/]::surface
-{ set surf;}
-
-
-
-way[!surface].surf::surface {
-  color:white;
+{ 
+  set surf;
   width:24;
   major-z-index:1.5;
+}
+area[highway=footway][footway!=crossing]:closed::surface,
+area[highway=cycleway][foot=~/designated|yes/]:closed::surface
+{ 
+  set asurf;
+  width:7;
+  fill-opacity:0.5;
+  major-z-index:1.1;
 }
 
-way[surface=~/paved|asphalt|concrete/].surf::surface
-{
-  color:green;
-  width:24;
-  major-z-index:1.5;
-}
-way[surface=cobblestone].surf::surface
-{
-  color:orange;
-  width:24;
-  major-z-index:1.5;
-}
-way[surface=~/unpaved|gravel|sand/].surf::surface
-{
-  color:#ff00ff;
-  width:24;
-  major-z-index:1.5;
-}
-way[surface=wood].surf::surface
-{
-  color:blue;
-  width:24;
-  major-z-index:1.5;
-}
+way[!surface].surf::surface {  color:white; }
+way[surface=~/paved|asphalt|concrete/].surf::surface {  color:green; }
+way[surface=cobblestone].surf::surface {  color:orange; }
+way[surface=~/unpaved|gravel|sand/].surf::surface {  color:#ff00ff; }
+way[surface=wood].surf::surface {  color:blue; }
+
+area[!surface].asurf::surface {  fill-color:white; }
+area[surface=~/paved|asphalt|concrete/].asurf::surface {  fill-color:green; }
+area[surface=cobblestone].asurf::surface {  fill-color:orange; }
+area[surface=~/unpaved|gravel|sand/].asurf::surface { fill-color:#ff00ff; }
+area[surface=wood].asurf::surface {  fill-color:blue; }
 
 
 /* smoothness: casing */
@@ -411,9 +413,39 @@ node[entrance][ramp:incline]::incline {
   text-offset-x:32;
 }
 
-node[highway=crossing] {
-icon-width: 26;
+node[highway=crossing]::conn {
+  text: eval("Connected?");
+  text-halo-color: black;
+  text-halo-radius: 2;
+  font-size: 12;
+  text-anchor-vertical:top;
+  text-anchor-horizontal:center;
+  text-color:red;
+  text-offset-y:-16;
+}
+
+node[highway=crossing]:connection::conn {
+  text: eval("");
+}
+
+node[highway=crossing], node[traffic_calming=bump] {
+  icon-width: 26;
+}
+
+node[manhole], node[traffic_calming=bump] {
+  text: "height";
+  text-halo-color: black;
+  text-halo-radius: 2;
+  font-size: 12;
+  text-anchor-vertical:top;
+  text-anchor-horizontal:center;
+  text-offset-y:14;
+}
+
+node[manhole] {
+  icon-image: "presets/cave_entrance.png";
 }
 
 node[entrance] {
 }
+
