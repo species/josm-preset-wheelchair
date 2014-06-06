@@ -1,7 +1,7 @@
 meta {
     title: "Wheelchair Routing Attributes";   /* title shown in the menu */
     /* icon: "images/logo.png";  small icon shown in the menu next to the title */
-    version: "0.4";           
+    version: "0.5";           
     description: "A Style for highlighting wheelchair-relevant Tags";      
     author: "Michael Maier (species@osm)";
     /* link: "http://...";       URL to the web page of the style */
@@ -18,7 +18,7 @@ node[barrier=kerb]
     text-anchor-horizontal:center;
     text-offset-y:14;
 }
-node[barrier=kerb][!kerb:height]
+node[barrier=kerb][!kerb:height][kerb!=lowered]
 {
   text: eval("Kerb height?");
   text-halo-color: white;
@@ -57,18 +57,27 @@ node[barrier=kerb][kerb=lowered]
 }
 
 /* icon for: kerb must be on change sidewalk/crossing, otherwise it's a step! */
-way[footway=crossing] > node[highway!=crossing][!kerb] {
+way[footway=crossing] > node[highway!=crossing][!kerb]:connection {
   icon-image: "https://github.com/species/josm-preset-wheelchair/raw/master/kerb_unknown.png";
   icon-width: 24;
 }
-way[footway=crossing] > node[highway!=crossing][!kerb]::rand {
+way[footway=crossing] > node[highway!=crossing][!kerb]:connection::rand {
   symbol-shape: square; 
-  symbol-fill-color:red; 
+  symbol-fill-color:orange; 
   symbol-size:28;
   z-index:-1;
 }
 
 way[footway=crossing]
+{
+  width: 16;
+  color: black;
+  dashes: 1,7;
+  dashes-background-color: white;
+  z-index:-1;
+}
+
+node[highway=crossing][crossing_ref=zebra] < way[footway=crossing]
 {
   width: 16;
   color: black;
@@ -390,8 +399,8 @@ node[entrance][ramp=yes]::ramp {
   icon-width: 24;
 }
 
-node[entrance][incline]::incline {
-  text: "incline";
+node[entrance][ramp:incline]::incline {
+  text: "ramp:incline";
   text-halo-color: white;
   text-halo-radius: 2;
   text-color: red;
@@ -403,7 +412,7 @@ node[entrance][incline]::incline {
 }
 
 node[highway=crossing] {
-icon-width: 20;
+icon-width: 26;
 }
 
 node[entrance] {
