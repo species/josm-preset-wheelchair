@@ -51,7 +51,7 @@
   <combo key="entrance" text="type of entrance" de.text="Typ des Eingangs" values="main,service,emergency,exit,yes" de.display_values="Haupteingang,Service-Eingang,Notausgang,Nur Ausgang,Unbestimmt" />
   <space />
   <check key="automatic_door" text="Automatic Door" de.text="Tür Automatisch?" />
-  <combo key="door" text="door type" de.text="Bauart der Tür" values="swinging,sliding,revolving" de.display_values="Normale Schwingtür,Schiebetür,Drehtür" />
+  <combo key="door" text="door type" de.text="Bauart der Tür" values="hinged,sliding,revolving,folding" de.display_values="Normale Schwingtür,Schiebetür,Drehtür,Falttür" />
   <text key="width" text="width" de.text="Türbreite (in Meter)" delete_if_empty="true" />
   <space />
   <text key="step_count" text="step count" de.text="Anzahl Stufen" delete_if_empty="true" />

@@ -310,7 +310,7 @@ way[smoothness][smoothness!~/excellent|good|intermediate|bad/]::smoothness
 /* entrances 
   * ramp + incline
   * width
-  * door type (swinging/sliding/revolving)
+  * door type (hinged/sliding/revolving)
   * Automatic Yes/No
   * step_count
   * Handrail 
@@ -365,7 +365,7 @@ node[entrance][door=sliding]::door {
   icon-width: 24;
 }
 
-node[entrance][door=swinging]::door {
+node[entrance][door=hinged]::door {
   icon-image: "https://github.com/species/josm-preset-wheelchair/raw/master/door_swinging.png";
   icon-width: 24;
 }
