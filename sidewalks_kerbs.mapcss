@@ -1,7 +1,7 @@
 meta {
     title: "Wheelchair Routing Attributes";   /* title shown in the menu */
     /* icon: "images/logo.png";  small icon shown in the menu next to the title */
-    version: "0.7";           
+    version: "0.8";           
     description: "A Style for highlighting wheelchair-relevant Tags";      
     author: "Michael Maier (species@osm)";
     /* link: "http://...";       URL to the web page of the style */
@@ -110,12 +110,12 @@ way[highway=steps][handrail:center=yes]::center
 way[highway=steps][handrail:right=yes]::right { 
   color:red;
   width:2;
-  offset:11; 
+  offset:-11; 
 }
 way[highway=steps][handrail:left=yes]::left {
   color:red;
   width:2;
-  offset:-11; 
+  offset:11; 
 }
 
 way[highway=steps][incline=up] { repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_up_steps.png"; }
