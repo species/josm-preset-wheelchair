@@ -1,7 +1,7 @@
 meta {
     title: "Wheelchair Routing Attributes";   /* title shown in the menu */
     /* icon: "images/logo.png";  small icon shown in the menu next to the title */
-    version: "0.8";           
+    version: "0.9";           
     description: "A Style for highlighting wheelchair-relevant Tags";      
     author: "Michael Maier (species@osm)";
     /* link: "http://...";       URL to the web page of the style */
@@ -278,28 +278,28 @@ area[surface=wood].asurf::surface {  fill-color:blue; }
 
 /* smoothness: casing */
 /* */
-way[smoothness=~/excellent|good/]::smoothness
+way[highway][smoothness=~/excellent|good/]::smoothness
 {
   width: 32;
   color:green;
   dashes:4,4;
   major-z-index:0.4;
 }
-way[smoothness=~/intermediate/]::smoothness
+way[highway][smoothness=~/intermediate/]::smoothness
 {
   width: 32;
   color:yellow;
   dashes:4,4;
   major-z-index:0.4;
 }
-way[smoothness=~/^bad$/]::smoothness
+way[highway][smoothness=~/^bad$/]::smoothness
 {
   width: 32;
   color:orange;
   dashes:4,4;
   major-z-index:0.4;
 }
-way[smoothness][smoothness!~/excellent|good|intermediate|bad/]::smoothness
+way[highway][smoothness][smoothness!~/excellent|good|intermediate|bad/]::smoothness
 {
   width: 32;
   color:red;
