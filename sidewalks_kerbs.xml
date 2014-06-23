@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0" 
 		 author="Michael Maier (species@osm)" 
-		 version="0.7" 
+		 version="0.8" 
 		 shortdescription="sidewalks, kerbs &amp; entrances 4 wheelchair-users" 
 		 de.shortdescription="Gehwege, Randsteine &amp; Eingänge für Rollis" 
 		 description="Add information about pavements, kerbs and entrances for wheelchair users" 
@@ -64,6 +64,11 @@
   <check key="handrail:left"  text="handrail:left?" de.text="Geländer links?" />
   <space />
   <check key="wheelchair"  text="wheelchair?" de.text="Rollstuhlgeeignet?" />
+  <space />
+  <text key="level" text="level" de.text="In welcher Ebene liegt die Tür? (0 = Erdgeschoss)" delete_if_empty="true" />
+  <space />
+  <label text="Operator: please use Name of POI" de.text="Betreiber: bitte den Namen des POIs verwenden!" />
+  <text key="operator" text="operator" de.text="Betreiber der Tür" delete_if_empty="true" />
 </item>
 </group>
 </presets> 
