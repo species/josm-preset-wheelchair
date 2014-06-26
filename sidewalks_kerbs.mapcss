@@ -1,7 +1,7 @@
 meta {
     title: "Wheelchair Routing Attributes";   /* title shown in the menu */
     /* icon: "images/logo.png";  small icon shown in the menu next to the title */
-    version: "1.0.1";           
+    version: "1.0.2";           
     description: "A Style for highlighting wheelchair-relevant Tags";      
     author: "Michael Maier (species@osm)";
     /* link: "http://...";       URL to the web page of the style */
@@ -95,23 +95,23 @@ node[barrier=kerb][kerb=lowered]
 }
 
 /* icon for: kerb must be on change sidewalk/crossing, otherwise it's a step! */
-way[footway=crossing] > node|z16-19[highway!=crossing][!kerb]:connection {
+way[footway=crossing] > node|z20-[highway!=crossing][!kerb]:connection {
   icon-image: "https://github.com/species/josm-preset-wheelchair/raw/master/kerb_unknown.png";
   icon-width: 24;
 }
-way[footway=crossing] > node|z-20[highway!=crossing][!kerb]:connection {
+way[footway=crossing] > node|z16-19[highway!=crossing][!kerb]:connection {
   icon-image: "https://github.com/species/josm-preset-wheelchair/raw/master/kerb_unknown.png";
   icon-width: 16;
 }
   
-way[footway=crossing] > node|z16-19[highway!=crossing][!kerb]:connection::rand {
+way[footway=crossing] > node|z16-[highway!=crossing][!kerb]:connection::rand {
   symbol-shape: square; 
   symbol-fill-color:orange; 
-  symbol-size:28;
+  symbol-size:20;
   z-index:-1;
 }
-way[footway=crossing] > node|z-20[highway!=crossing][!kerb]:connection::rand {
-  symbol-size:20;
+way[footway=crossing] > node|z20-[highway!=crossing][!kerb]:connection::rand {
+  symbol-size:28;
 }
 
 way[footway=crossing]
