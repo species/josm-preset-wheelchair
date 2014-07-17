@@ -272,6 +272,15 @@ way[width >= 1.3].display_width::width
 {
   repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/width-good.png";
 }
+way[width][width !~ /^[0-9.]{1,25}$/ ].display_width::width
+{
+  text: eval("Fix width");
+  text-offset:0;
+  text-color: red;
+  font-size: 14;
+  text-halo-color: white;
+  text-halo-radius: 2;
+}
 
 
 /* surface status */
