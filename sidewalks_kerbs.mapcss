@@ -1,7 +1,7 @@
 meta {
     title: "Wheelchair Routing Attributes";   /* title shown in the menu */
     /* icon: "images/logo.png";  small icon shown in the menu next to the title */
-    version: "1.0.3";           
+    version: "1.0.4";           
     description: "A Style for highlighting wheelchair-relevant Tags";      
     author: "Michael Maier (species@osm)";
     /* link: "http://...";       URL to the web page of the style */
@@ -417,6 +417,11 @@ node|z19-[entrance][door=hinged]::door {
 
 node|z19-[entrance][door=folding]::door {
   icon-image: "https://github.com/species/josm-preset-wheelchair/raw/master/door_folding.png";
+  icon-width: 24;
+}
+
+node|z19-[entrance][door=trapdoor]::door {
+  icon-image: "https://github.com/species/josm-preset-wheelchair/raw/master/door_trapdoor.png";
   icon-width: 24;
 }
 
