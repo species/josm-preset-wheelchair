@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0" 
 		 author="Michael Maier (species@osm)" 
-		 version="0.8" 
+		 version="0.9" 
 		 shortdescription="sidewalks, kerbs &amp; entrances 4 wheelchair-users" 
 		 de.shortdescription="Gehwege, Randsteine &amp; Eingänge für Rollis" 
 		 description="Add information about pavements, kerbs and entrances for wheelchair users" 
@@ -50,8 +50,8 @@
   <space />
   <combo key="entrance" text="type of entrance" de.text="Typ des Eingangs" values="main,service,emergency,exit,yes" de.display_values="Haupteingang,Service-Eingang,Notausgang,Nur Ausgang,Unbestimmt" />
   <space />
-  <check key="automatic_door" text="Automatic Door" de.text="Tür Automatisch?" />
-  <combo key="door" text="door type" de.text="Bauart der Tür" values="hinged,sliding,revolving,folding" de.display_values="Normale Schwingtür,Schiebetür,Drehtür,Falttür" />
+  <combo key="automatic_door" text="Automatic Door" de.text="Tür Automatisch?" values="no,yes,button,continuous,slowdown_button,camera,floor,infrared" de.display_values="Nein,Ja\, Typ unbekannt,Öffnen-Knopf,Kontinuierlich,Immer ein\,Stopp-Knopf,Kamera-aktiviert,Bodensensor,Infrarot-Sensor"/>
+  <combo key="door" text="door type" de.text="Bauart der Tür" values="hinged,sliding,revolving,folding,trapdoor" de.display_values="Normale Schwingtür,Schiebetür,Drehtür,Falttür,Falltür (Boden)" />
   <text key="width" text="width" de.text="Türbreite (in Meter)" delete_if_empty="true" />
   <space />
   <text key="step_count" text="step count" de.text="Anzahl Stufen" delete_if_empty="true" />
