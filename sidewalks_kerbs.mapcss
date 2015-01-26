@@ -1,7 +1,7 @@
 meta {
     title: "Wheelchair Routing Attributes";   /* title shown in the menu */
     /* icon: "images/logo.png";  small icon shown in the menu next to the title */
-    version: "1.0.4";           
+    version: "1.0.5";           
     description: "A Style for highlighting wheelchair-relevant Tags";      
     author: "Michael Maier (species@osm)";
     /* link: "http://...";       URL to the web page of the style */
@@ -388,17 +388,24 @@ node|z19-[entrance][width]::width {
   text-offset-x:-26;
 }
 
-node|z19-[entrance][automatic_door=yes]::A {
-  text: eval("A");
+node|z19-[entrance][automatic_door]::A {
+  text: "automatic_door";
   text-halo-color: white;
   text-halo-radius: 2;
   text-color: blue;
   font-size: 14;
   text-anchor-vertical:top;
-  text-anchor-horizontal:center;
+  text-anchor-horizontal:right;
   text-offset-y:28;
-  text-offset-x:20;
+  text-offset-x:14;
 }
+node|z19-[entrance][automatic_door=yes]::A {
+  text: eval("A");
+}
+node|z19-[entrance][automatic_door=no]::A {
+  text: eval("");
+}
+
 
 node|z19-[entrance][door=revolving]::door {
   icon-image: "https://github.com/species/josm-preset-wheelchair/raw/master/door_revolving.png";
