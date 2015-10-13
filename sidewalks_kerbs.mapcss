@@ -1,7 +1,7 @@
 meta {
     title: "Wheelchair Routing Attributes";   /* title shown in the menu */
     /* icon: "images/logo.png";  small icon shown in the menu next to the title */
-    version: "1.0.5";           
+    version: "1.0.6";           
     description: "A Style for highlighting wheelchair-relevant Tags";      
     author: "Michael Maier (species@osm)";
     /* link: "http://...";       URL to the web page of the style */
@@ -95,22 +95,22 @@ node[barrier=kerb][kerb=lowered]
 }
 
 /* icon for: kerb must be on change sidewalk/crossing, otherwise it's a step! */
-way[footway=crossing] > node|z20-[highway!=crossing][!kerb]:connection {
+way[footway=crossing] > node|z20-[highway!=crossing][!kerb][railway!=crossing]:connection {
   icon-image: "https://github.com/species/josm-preset-wheelchair/raw/master/kerb_unknown.png";
   icon-width: 24;
 }
-way[footway=crossing] > node|z16-19[highway!=crossing][!kerb]:connection {
+way[footway=crossing] > node|z16-19[highway!=crossing][!kerb][railway!=crossing]:connection {
   icon-image: "https://github.com/species/josm-preset-wheelchair/raw/master/kerb_unknown.png";
   icon-width: 16;
 }
   
-way[footway=crossing] > node|z16-[highway!=crossing][!kerb]:connection::rand {
+way[footway=crossing] > node|z16-[highway!=crossing][!kerb][railway!=crossing]:connection::rand {
   symbol-shape: square; 
   symbol-fill-color:orange; 
   symbol-size:20;
   z-index:-1;
 }
-way[footway=crossing] > node|z20-[highway!=crossing][!kerb]:connection::rand {
+way[footway=crossing] > node|z20-[highway!=crossing][!kerb][railway!=crossing]:connection::rand {
   symbol-size:28;
 }
 
@@ -133,6 +133,36 @@ node[highway=crossing][crossing_ref=zebra] < way[footway=crossing]
   z-index:-1;
 }
 node[highway=crossing][crossing_ref=zebra] < way|z-19[footway=crossing] {   width: 8; }
+
+node[highway=crossing][crossing_ref=toucan] < way[footway=crossing] 
+{
+  width: 4;
+  color:white;
+  dashes-background-color: green;
+  dashes: 4,4;
+  offset:6;
+  z-index:-1;
+}
+node[highway=crossing][crossing_ref=toucan] < way[footway=crossing]::right
+{
+  width: 4;
+  color:white;
+  dashes-background-color: green;
+  dashes: 4,4;
+  offset:-6;
+  z-index:-1;
+}
+node[highway=crossing][crossing_ref=toucan] < way[footway=crossing][surface=unpaved]{ dashes-background-color:#ff00ff }
+node[highway=crossing][crossing_ref=toucan] < way[footway=crossing][surface=unpaved]::right { dashes-background-color:#ff00ff }
+node[highway=crossing][crossing_ref=toucan] < way[footway=crossing][surface=wood] { dashes-background-color:blue }
+node[highway=crossing][crossing_ref=toucan] < way[footway=crossing][surface=wood]::right { dashes-background-color:blue }
+node[highway=crossing][crossing_ref=toucan] < way[footway=crossing][surface=cobblestone] { dashes-background-color:orange }
+node[highway=crossing][crossing_ref=toucan] < way[footway=crossing][surface=cobblestone]::right { dashes-background-color:orange }
+node[highway=crossing][crossing_ref=toucan] < way[footway=crossing][surface~/unpaved|gravel|sand/] { dashes-background-color:#ff00ff }
+node[highway=crossing][crossing_ref=toucan] < way[footway=crossing][surface~/unpaved|gravel|sand/]::right { dashes-background-color:#ff00ff }
+node[highway=crossing][crossing_ref=toucan] < way[footway=crossing][!surface] { dashes-background-color:black }
+node[highway=crossing][crossing_ref=toucan] < way[footway=crossing][!surface]::right { dashes-background-color:black }
+
 
 /* step properties */
 way[highway=steps]
