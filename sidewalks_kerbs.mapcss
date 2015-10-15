@@ -1,7 +1,7 @@
 meta {
     title: "Wheelchair Routing Attributes";   /* title shown in the menu */
     /* icon: "images/logo.png";  small icon shown in the menu next to the title */
-    version: "1.0.6";           
+    version: "1.0.7";           
     description: "A Style for highlighting wheelchair-relevant Tags";      
     author: "Michael Maier (species@osm)";
     /* link: "http://...";       URL to the web page of the style */
@@ -158,8 +158,8 @@ node[highway=crossing][crossing_ref=toucan] < way[footway=crossing][surface=wood
 node[highway=crossing][crossing_ref=toucan] < way[footway=crossing][surface=wood]::right { dashes-background-color:blue }
 node[highway=crossing][crossing_ref=toucan] < way[footway=crossing][surface=cobblestone] { dashes-background-color:orange }
 node[highway=crossing][crossing_ref=toucan] < way[footway=crossing][surface=cobblestone]::right { dashes-background-color:orange }
-node[highway=crossing][crossing_ref=toucan] < way[footway=crossing][surface~/unpaved|gravel|sand/] { dashes-background-color:#ff00ff }
-node[highway=crossing][crossing_ref=toucan] < way[footway=crossing][surface~/unpaved|gravel|sand/]::right { dashes-background-color:#ff00ff }
+node[highway=crossing][crossing_ref=toucan] < way[footway=crossing][surface=~/unpaved|gravel|sand/] { dashes-background-color:#ff00ff }
+node[highway=crossing][crossing_ref=toucan] < way[footway=crossing][surface=~/unpaved|gravel|sand/]::right { dashes-background-color:#ff00ff }
 node[highway=crossing][crossing_ref=toucan] < way[footway=crossing][!surface] { dashes-background-color:black }
 node[highway=crossing][crossing_ref=toucan] < way[footway=crossing][!surface]::right { dashes-background-color:black }
 
