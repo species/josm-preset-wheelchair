@@ -1,7 +1,7 @@
 meta {
     title: "Wheelchair Routing Attributes";   /* title shown in the menu */
     icon: "https://github.com/species/josm-preset-wheelchair/raw/master/footway-wheelchair.png"; /* small icon shown in the menu next to the title */
-    version: "1.0.8";           
+    version: "1.0.9";           
     description: "A Style for highlighting wheelchair-relevant Tags";      
     author: "Michael Maier (species@osm)";
     /* link: "http://...";       URL to the web page of the style */
@@ -92,6 +92,28 @@ node[barrier=kerb][kerb=flush]
 node[barrier=kerb][kerb=lowered]
 {
     icon-image: "https://github.com/species/josm-preset-wheelchair/raw/master/kerb_lowered.png";
+}
+
+way[barrier=kerb][kerb=lowered]::background
+{
+  width:2;
+  color:yellow;
+  z-index:-100;
+  offset:2; 
+}
+way[barrier=kerb][kerb=raised]::background
+{
+  width:2;
+  color:red;
+  z-index:-10;
+  offset:2; 
+}
+way[barrier=kerb][kerb=flush]::background
+{
+  width:2;
+  color:green;
+  z-index:-10;
+  offset:2; 
 }
 
 /* icon for: kerb must be on change sidewalk/crossing, otherwise it's a step! */
