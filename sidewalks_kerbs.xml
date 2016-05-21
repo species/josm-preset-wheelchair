@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0" 
 		 author="Michael Maier (species@osm)" 
-		 version="0.10" 
+		 version="0.11" 
 		 shortdescription="sidewalks, kerbs &amp; entrances 4 wheelchair-users" 
 		 de.shortdescription="Gehwege, Randsteine &amp; Eingänge für Rollis" 
 		 description="Add information about pavements, kerbs and entrances for wheelchair users" 
@@ -49,6 +49,8 @@
   <space />
   <label text="kerb heights (use “N &lt;space&gt; cm”)" de.text="Höhe bitte als „XX &lt;Leerzeichen&gt; cm“ angeben" />
   <text key="kerb:height" text="kerb:height" de.text="Randsteinhöhe" delete_if_empty="true" />
+  <space />
+  <check key="tactile_paving" text="is there a tactile paving in front of the kerb on the pavement?" de.text="Taktiles Leitsystem vor der Kante?" />
 </item>
 <item name="Entrance Details" de.name="Tür-Attribute" icon="styles/standard/misc/entrance-main.png" type="node">
   <label text="entrances" de.text="Tür-Attribute" />
