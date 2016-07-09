@@ -1,7 +1,7 @@
 meta {
     title: "Wheelchair Routing Attributes";   /* title shown in the menu */
     icon: "https://github.com/species/josm-preset-wheelchair/raw/master/footway-wheelchair.png"; /* small icon shown in the menu next to the title */
-    version: "1.0.15";
+    version: "1.0.16";
     description: "A Style for highlighting wheelchair-relevant Tags";      
     author: "Michael Maier (species@osm)";
     /* link: "http://...";       URL to the web page of the style */
@@ -364,7 +364,7 @@ way[width][width !~ /^[0-9.]{1,25}$/ ].display_width::width
 /* ways for which surface should be rendered */
 way[highway=steps]::surface,
 way[highway=footway][footway!=crossing]::surface,
-way[highway=cycleway][foot=~/designated|yes/]::surface,
+way[highway=cycleway]::surface,
 way[highway=~/service|residential|track|unclassified/]::surface
 { 
   set surf;
@@ -374,21 +374,21 @@ way[highway=~/service|residential|track|unclassified/]::surface
 
 way|z17-19[highway=steps]::surface,
 way|z17-19[highway=footway][footway!=crossing]::surface,
-way|z17-19[highway=cycleway][foot=~/designated|yes/]::surface,
+way|z17-19[highway=cycleway]::surface,
 way|z17-19[highway=~/service|residential|track|unclassified/]::surface
 {
   width: 12;
 }
 way|z20-[highway=steps]::surface,
 way|z20-[highway=footway][footway!=crossing]::surface,
-way|z20-[highway=cycleway][foot=~/designated|yes/]::surface,
+way|z20-[highway=cycleway]::surface,
 way|z20-[highway=~/service|residential|track|unclassified/]::surface
 {
   width: 24;
 }
 
 area|z17-[highway=footway][footway!=crossing]:closed::surface,
-area|z17-[highway=cycleway][foot=~/designated|yes/]:closed::surface,
+area|z17-[highway=cycleway]:closed::surface,
 area|z17-[highway=~/service|residential|track|unclassified/]:closed::surface
 { 
   set asurf;
