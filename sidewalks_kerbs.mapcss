@@ -1,7 +1,7 @@
 meta {
     title: "Wheelchair Routing Attributes";   /* title shown in the menu */
     icon: "https://github.com/species/josm-preset-wheelchair/raw/master/footway-wheelchair.png"; /* small icon shown in the menu next to the title */
-    version: "1.0.13";
+    version: "1.0.14";
     description: "A Style for highlighting wheelchair-relevant Tags";      
     author: "Michael Maier (species@osm)";
     /* link: "http://...";       URL to the web page of the style */
@@ -153,15 +153,25 @@ way[footway=crossing]
 }
 way|z-19[footway=crossing] {   width: 8; }
 
+way[footway=crossing][surface=~/^paved|asphalt/]{ dashes-background-color:green }
+way[footway=crossing][surface=unpaved]{ dashes-background-color:#ff00ff }
+way[footway=crossing][surface=wood] { dashes-background-color:blue }
+way[footway=crossing][surface=cobblestone] { dashes-background-color:orange }
+way[footway=crossing][surface=~/unpaved|gravel|sand/] { dashes-background-color:#ff00ff }
+
+
 node[highway=crossing][crossing_ref=zebra] < way[footway=crossing]
 {
   width: 16;
   color: black;
   dashes: 4,4;
-  dashes-background-color: white;
   z-index:-1;
 }
+
+
 node[highway=crossing][crossing_ref=zebra] < way|z-19[footway=crossing] {   width: 8; }
+
+
 
 node[highway=crossing][crossing_ref=toucan] < way[footway=crossing] 
 {
@@ -249,43 +259,43 @@ way|z18-[segregated=yes]::segregated
   7-10%   orange
   > 10 red
 */
-way[incline]::incline
+way[highway][incline]::incline
 {
   repeat-image-spacing: 90;
   repeat-image-width: 24;
   major-z-index:3.1;
 }
-way[incline=~/^[12](?:[.][0-9])?%$/]::incline                               {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_up_green.png";}
-way[incline=~/^[3-6](?:[.][0-9])?%$/]::incline                              {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_up_yellow.png";}
-way[incline=~/^[7-9]{1}(?:[.][0-9])?%$|^10(?:[.][0-9])?%$/]::incline                     {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_up_orange.png";}
-way[incline=~/^1[1-9](?:[.][0-9])?%$|^[2-9][0-9]%$|^1[0-9]{2}%$/]::incline  {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_up_red.png";}
-way[incline="up"][highway!=steps]::incline                               {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_up_generic.png";}
+way[highway][incline=~/^[12](?:[.][0-9])?%$/]::incline                               {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_up_green.png";}
+way[highway][incline=~/^[3-6](?:[.][0-9])?%$/]::incline                              {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_up_yellow.png";}
+way[highway][incline=~/^[7-9]{1}(?:[.][0-9])?%$|^10(?:[.][0-9])?%$/]::incline                     {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_up_orange.png";}
+way[highway][incline=~/^1[1-9](?:[.][0-9])?%$|^[2-9][0-9]%$|^1[0-9]{2}%$/]::incline  {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_up_red.png";}
+way[highway][incline="up"][highway!=steps]::incline                               {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_up_generic.png";}
 
-way[incline=~/^-[12](?:[.][0-9])?%$/]::incline                                {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_down_green.png";}
-way[incline=~/^-[3-6](?:[.][0-9])?%$/]::incline                               {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_down_yellow.png";} 
-way[incline=~/^-[7-9]{1}(?:[.][0-9])?%$|^-10(?:[.][0-9])?%$/]::incline                     {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_down_orange.png";}
-way[incline=~/^-1[1-9](?:[.][0-9])?%$|^-[2-9][0-9](?:[.][0-9])?%$|^-1[0-9]{2}(?:[.][0-9])?%$/]::incline {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_down_red.png";}
-way[incline="down"][highway!=steps]::incline                               {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_down_generic.png";}
+way[highway][incline=~/^-[12](?:[.][0-9])?%$/]::incline                                {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_down_green.png";}
+way[highway][incline=~/^-[3-6](?:[.][0-9])?%$/]::incline                               {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_down_yellow.png";} 
+way[highway][incline=~/^-[7-9]{1}(?:[.][0-9])?%$|^-10(?:[.][0-9])?%$/]::incline                     {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_down_orange.png";}
+way[highway][incline=~/^-1[1-9](?:[.][0-9])?%$|^-[2-9][0-9](?:[.][0-9])?%$|^-1[0-9]{2}(?:[.][0-9])?%$/]::incline {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_down_red.png";}
+way[highway][incline="down"][highway!=steps]::incline                               {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_down_generic.png";}
 
-way[incline:across]::across_incline
+way[highway][incline:across]::across_incline
 { 
   repeat-image-spacing: 90;
   repeat-image-phase:30;
   repeat-image-width: 24;
   major-z-index:3.1;
 }
-way[incline:across="0%"]::across_incline                                     {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_across-even.png";}
-way[incline:across=~/^[12](?:[.][0-9])?%$/]::across_incline                               {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_across-right_green.png";}
-way[incline:across=~/^[3-6](?:[.][0-9])?%$/]::across_incline                              {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_across-right_yellow.png";}
-way[incline:across=~/^[7-9]{1}(?:[.][0-9])?%$|^10(?:[.][0-9])?%$/]::across_incline                     {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_across-right_orange.png";}
-way[incline:across=~/^1[1-9](?:[.][0-9])?%$|^[2-9][0-9](?:[.][0-9])?%$|^1[0-9]{2}(?:[.][0-9])?%$/]::across_incline  {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_across-right_red.png";}
+way[highway][incline:across="0%"]::across_incline                                     {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_across-even.png";}
+way[highway][incline:across=~/^[12](?:[.][0-9])?%$/]::across_incline                               {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_across-right_green.png";}
+way[highway][incline:across=~/^[3-6](?:[.][0-9])?%$/]::across_incline                              {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_across-right_yellow.png";}
+way[highway][incline:across=~/^[7-9]{1}(?:[.][0-9])?%$|^10(?:[.][0-9])?%$/]::across_incline                     {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_across-right_orange.png";}
+way[highway][incline:across=~/^1[1-9](?:[.][0-9])?%$|^[2-9][0-9](?:[.][0-9])?%$|^1[0-9]{2}(?:[.][0-9])?%$/]::across_incline  {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_across-right_red.png";}
 
-way[incline:across=~/^-[12](?:[.][0-9])?%$/]::across_incline                               {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_across-left_green.png";}
-way[incline:across=~/^-[3-6](?:[.][0-9])?%$/]::across_incline                              {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_across-left_yellow.png";}
-way[incline:across=~/^-[7-9]{1}(?:[.][0-9])?%$|^-10(?:[.][0-9])?%$/]::across_incline                     {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_across-left_orange.png";}
-way[incline:across=~/^-1[1-9](?:[.][0-9])?%$|^[2-9][0-9](?:[.][0-9])?%$|^-1[0-9]{2}(?:[.][0-9])?%$/]::across_incline  {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_across-left_red.png";}
+way[highway][incline:across=~/^-[12](?:[.][0-9])?%$/]::across_incline                               {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_across-left_green.png";}
+way[highway][incline:across=~/^-[3-6](?:[.][0-9])?%$/]::across_incline                              {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_across-left_yellow.png";}
+way[highway][incline:across=~/^-[7-9]{1}(?:[.][0-9])?%$|^-10(?:[.][0-9])?%$/]::across_incline                     {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_across-left_orange.png";}
+way[highway][incline:across=~/^-1[1-9](?:[.][0-9])?%$|^[2-9][0-9](?:[.][0-9])?%$|^-1[0-9]{2}(?:[.][0-9])?%$/]::across_incline  {  repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/incline_across-left_red.png";}
 
-way|z-17[incline:across]::across_incline, way|z-17[incline]::incline { repeat-image:none; }
+way|z-17[highway][incline:across]::across_incline, way|z-17[incline]::incline { repeat-image:none; }
 
 /* widths */
 
