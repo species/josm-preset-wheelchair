@@ -329,8 +329,17 @@ way[width].display_width::width {
   repeat-image-phase:85;
   repeat-image-width: 24;
   major-z-index: 3.2;
+
+  text: width;
+  text-offset:20;
+  text-color: red;
+  font-size: 14;
+  text-halo-color: white;
+  text-halo-radius: 2;
 }
-way|z19[width].display_width::width { repeat-image-width: 12; }
+way|z19[width].display_width::width { 
+  repeat-image-width: 12;
+}
 
 way[width < 0.8].display_width::width
 {
@@ -339,14 +348,18 @@ way[width < 0.8].display_width::width
 way[width >= 0.8][width < 0.9].display_width::width
 {
   repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/width-orange.png";
+  text-color: orange;
 }
 way[width >= 0.9][width < 1.8].display_width::width
 {
   repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/width-yellow.png";
+  text-color: yellow;
+  text-halo-color: gray;
 }
 way[width >= 1.8].display_width::width
 {
   repeat-image: "https://github.com/species/josm-preset-wheelchair/raw/master/width-good.png";
+  text-color: green;
 }
 way[width][width !~ /^[0-9.]{1,25}$/ ].display_width::width
 {
@@ -370,7 +383,7 @@ way[width][width !~ /^[0-9.]{1,25}$/ ].display_width::width
 way[highway=steps]::surface,
 way[highway=footway][footway!=crossing]::surface,
 way[highway=cycleway]::surface,
-way[highway=~/service|residential|track|unclassified/]::surface
+way[highway=~/service|residential|track|unclassified|pedestrian/]::surface
 { 
   set surf;
   width: 4;
@@ -380,21 +393,21 @@ way[highway=~/service|residential|track|unclassified/]::surface
 way|z17-19[highway=steps]::surface,
 way|z17-19[highway=footway][footway!=crossing]::surface,
 way|z17-19[highway=cycleway]::surface,
-way|z17-19[highway=~/service|residential|track|unclassified/]::surface
+way|z17-19[highway=~/service|residential|track|unclassified|pedestrian/]::surface
 {
   width: 12;
 }
 way|z20-[highway=steps]::surface,
 way|z20-[highway=footway][footway!=crossing]::surface,
 way|z20-[highway=cycleway]::surface,
-way|z20-[highway=~/service|residential|track|unclassified/]::surface
+way|z20-[highway=~/service|residential|track|unclassified|pedestrian/]::surface
 {
   width: 24;
 }
 
 area|z17-[highway=footway][footway!=crossing]:closed::surface,
 area|z17-[highway=cycleway]:closed::surface,
-area|z17-[highway=~/service|residential|track|unclassified/]:closed::surface
+area|z17-[highway=~/service|residential|track|unclassified|pedestrian/]:closed::surface
 { 
   set asurf;
   width:7;
