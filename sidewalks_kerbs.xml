@@ -41,10 +41,10 @@
   <space />
   <key key="barrier" value="kerb" />
   <combo key="kerb" text="type of kerb" de.text="Typ des Randsteins">
-    <list_entry value="flush" de.display_values="ganz eben (0cm)" icon="https://github.com/species/josm-preset-wheelchair/raw/master/kerb_flush.png" />
-    <list_entry value="lowered" de.display_values="abgesenkt (1-3cm)" icon="https://github.com/species/josm-preset-wheelchair/raw/master/kerb_lowered.png" />
-    <list_entry value="rolled" de.display_values="abgeschrägt (45°- &gt;3cm)" icon="https://github.com/species/josm-preset-wheelchair/raw/master/kerb_rolled.png" />
-    <list_entry value="raised" de.display_values="hoch (&gt;3cm)" icon="https://github.com/species/josm-preset-wheelchair/raw/master/kerb_raised.png" />
+    <list_entry value="flush" de.display_value="ganz eben (0cm)" icon="https://github.com/species/josm-preset-wheelchair/raw/master/kerb_flush.png" />
+    <list_entry value="lowered" de.display_value="abgesenkt (1-3cm)" icon="https://github.com/species/josm-preset-wheelchair/raw/master/kerb_lowered.png" />
+    <list_entry value="rolled" de.display_value="abgeschrägt (45°- &gt;3cm)" icon="https://github.com/species/josm-preset-wheelchair/raw/master/kerb_rolled.png" />
+    <list_entry value="raised" de.display_value="hoch (&gt;3cm)" icon="https://github.com/species/josm-preset-wheelchair/raw/master/kerb_raised.png" />
   </combo>
   <space />
   <label text="kerb heights (use “N &lt;space&gt; cm”)" de.text="Höhe bitte als „XX &lt;Leerzeichen&gt; cm“ angeben" />
