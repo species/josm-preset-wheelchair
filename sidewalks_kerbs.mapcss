@@ -407,7 +407,8 @@ way|z20-[highway=~/service|residential|track|unclassified|pedestrian/]::surface
 
 area|z17-[highway=footway][footway!=crossing]:closed::surface,
 area|z17-[highway=cycleway]:closed::surface,
-area|z17-[highway=~/service|residential|track|unclassified|pedestrian/]:closed::surface
+area|z17-[highway=~/service|residential|track|unclassified|pedestrian/]:closed::surface,
+area|z17-[area:highway=~/service|residential|track|unclassified|pedestrian/]:closed::surface
 { 
   set asurf;
   width:7;
