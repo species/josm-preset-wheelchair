@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0" 
 		 author="Michael Maier (species@osm)" 
-		 version="0.11" 
+		 version="0.12" 
 		 shortdescription="sidewalks, kerbs &amp; entrances 4 wheelchair-users" 
 		 de.shortdescription="Gehwege, Randsteine &amp; Eingänge für Rollis" 
 		 description="Add information about pavements, kerbs and entrances for wheelchair users" 
@@ -36,7 +36,7 @@
   <space />
   <combo key="tunnel" text="tunnel" de.text="Ist dieser Abschnitt ein Tunnel?" values="building_passage,yes" de.display_values="Gebäude-Durchgang,Tunnel" delete_if_empty="true" />
 </item>
-<item name="Kerb details" de.name="Randstein-Attribute" icon="https://github.com/species/josm-preset-wheelchair/raw/master/kerb_rolled.png" type="node">
+<item name="Kerb details" de.name="Randstein-Attribute" icon="https://github.com/species/josm-preset-wheelchair/raw/master/kerb_rolled.png" type="node,way">
   <label text="kerbs" de.text="Randstein-Attribute" />
   <space />
   <key key="barrier" value="kerb" />
