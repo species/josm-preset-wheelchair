@@ -52,7 +52,7 @@
   <space />
   <check key="tactile_paving" text="is there a tactile paving in front of the kerb on the pavement?" de.text="Taktiles Leitsystem vor der Kante?" />
 </item>
-<item name="Entrance Details" de.name="Tür-Attribute" icon="styles/standard/misc/entrance-main.png" type="node">
+<item name="Entrance Details" de.name="Tür-Attribute" icon="presets/misc/entrance-main.png" type="node">
   <label text="entrances" de.text="Tür-Attribute" />
   <space />
   <combo key="entrance" text="type of entrance" de.text="Typ des Eingangs" values="main,service,emergency,exit,yes" de.display_values="Haupteingang,Service-Eingang,Notausgang,Nur Ausgang,Unbestimmt" />
