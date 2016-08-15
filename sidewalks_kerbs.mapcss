@@ -609,7 +609,7 @@ node[manhole], node[traffic_calming=bump] {
 }
 
 node[manhole] {
-  icon-image: "presets/landmark/cave_entrance.png";
+  icon-image: "presets/landmark/cave_entrance.svg";
 }
 
 node[entrance] {
